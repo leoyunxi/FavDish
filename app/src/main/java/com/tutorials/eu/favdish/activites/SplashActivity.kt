@@ -1,11 +1,19 @@
 package com.tutorials.eu.favdish.activites
 
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.WindowInsets
+import android.view.WindowManager
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
+import com.tutorials.eu.favdish.MainActivity
+import com.tutorials.eu.favdish.R
 import com.tutorials.eu.favdish.databinding.ActivitySplashBinding
 
-// TODO Step 1: Create a new activity as Splash Screen.
-// START
 /**
  * A Splash Screen
  */
@@ -14,22 +22,52 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO Step 5: Access the XML layout file using the ViewBiding.
-        // START
         val splashBinding: ActivitySplashBinding = ActivitySplashBinding.inflate(layoutInflater)
-        // END
-
-        // TODO Step 6: Update the content view using the ViewBinding
-        // START
         setContentView(splashBinding.root)
+
+        // TODO Step 1: Make the Splash Activity as a full screen view that means hide the Status Bar.
+        // START
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            @Suppress("DEPRECATION")
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
         // END
 
-        // TODO Step 7: You can access the TextView without findViewById or Kotlin extensions using splashBinding variable and perform the operations that you want.
+        // TODO Step 5: Create a access variable for Animation as below. Uncomment the TextView binding code and apply the animation to it.
         // START
-        // I am commenting it for now we will use later on.
-        // splashBinding.tvAppName
+        val splashAnimation = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.anim_splash)
+        splashBinding.tvAppName.animation = splashAnimation
+        // END
+
+        // TODO Step 7: We will see if you want to perform any action after animation completion with the callbacks is as below.
+        // START
+        splashAnimation.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {
+                // "Add the code that you want to execute when animation starts")
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                // "Add the code that you want to execute when animation ends")
+
+                // TODO Step 8: Once the animation completes we will navigate it to the Main Activity with delay 1 second using Handler.
+                // START
+                Handler(Looper.getMainLooper()).postDelayed({
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                    finish()
+                }, 1000)
+                // END
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {
+                // "Add the code that you want to execute when animation repeats")
+            }
+        })
         // END
 
     }
 }
-// END
