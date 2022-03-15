@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--TODO Step 4: After adding the anim directory in the res folder. Create a new Animation Resource File name as anim_splash.-->
-<!--START-->
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:fillAfter="true">
 
@@ -18,4 +16,3 @@
         android:interpolator="@android:anim/accelerate_decelerate_interpolator"
         android:toAlpha="1.0" />
 </set>
-    <!--END-->

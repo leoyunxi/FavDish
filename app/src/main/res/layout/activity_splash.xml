@@ -7,7 +7,6 @@
     android:background="@color/primary_dark_color"
     tools:context=".activites.SplashActivity">
 
-    <!--TODO Step 6: Update TextView for animation. Remove the constraintBottom to make it appear at top.-->
     <TextView
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"

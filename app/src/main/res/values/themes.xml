@@ -15,8 +15,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <!--TODO Step 2: As you can see the Splash screen is not a full screen yet as the ActionBar is visible so let's add the NoActionBar style. This style is auto added by the Android studio when you create the activity as BasicActivity.-->
-    <!--START-->
     <style name="Theme.FavDish.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -25,5 +23,4 @@
     <style name="Theme.FavDish.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.FavDish.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <!--END-->
 </resources>
