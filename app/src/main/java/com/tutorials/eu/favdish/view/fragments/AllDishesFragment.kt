@@ -11,18 +11,14 @@ import com.tutorials.eu.favdish.R
 import com.tutorials.eu.favdish.view.activities.AddUpdateDishActivity
 import com.tutorials.eu.favdish.viewmodel.HomeViewModel
 
-// TODO Step 3: Rename the HomeFragment as AllDishesFragment.
 class AllDishesFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
 
-    // TODO Step 8: Override the onCreate function and enable setHasOptionMenu to add the action menu to Fragment.
-    // START
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
-    // END
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -39,8 +35,6 @@ class AllDishesFragment : Fragment() {
         return root
     }
 
-    // TODO Step 9: Override the onCreateOptionMenu and onOptionsItemSelected methods and launch the AddUpdateDishActivity on selection.
-    // START
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_all_dishes, menu)
         super.onCreateOptionsMenu(menu, inflater)
@@ -56,5 +50,4 @@ class AllDishesFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
-    // END
 }
