@@ -44,10 +44,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    // TODO step 1: Add the library for designing the better layout using dimensions.
-    // START
+    // SDP - A scalable size unit library
+    // https://github.com/intuit/sdp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    // END
 
     implementation 'androidx.navigation:navigation-fragment:2.3.2'
     implementation 'androidx.navigation:navigation-ui:2.3.2'

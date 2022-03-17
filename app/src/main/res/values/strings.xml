@@ -8,8 +8,6 @@
 
     <string name="action_add_dish">Add Dish</string>
 
-    <!--TODO Step 3: Add the string values in the strings.xml file.-->
-    <!--START-->
     <string name="image_contentDescription">image</string>
     <string name="lbl_title">Title</string>
     <string name="lbl_type">Type</string>
@@ -18,5 +16,4 @@
     <string name="lbl_cooking_time_in_minutes">Cooking Time In Minutes</string>
     <string name="lbl_direction_to_cook">Direction To Cook</string>
     <string name="lbl_add_dish">ADD DISH</string>
-    <!--END-->
 </resources>

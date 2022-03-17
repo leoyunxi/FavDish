@@ -24,13 +24,11 @@
             android:name=".view.activities.MainActivity"
             android:label="@string/app_name" />
 
-        <!--TODO Step 9: Add the configChanges attribute to allow layout to rotate it horizontally in the application if user rotates it.-->
-        <!--START-->
-        <activity android:name=".view.activities.AddUpdateDishActivity"
+        <activity
+            android:name=".view.activities.AddUpdateDishActivity"
+            android:configChanges="orientation"
             android:label="Add Dish"
-            android:theme="@style/Theme.FavDish.NoActionBar"
-            android:configChanges="orientation"/>
-        <!--END-->
+            android:theme="@style/Theme.FavDish.NoActionBar" />
     </application>
 
 </manifest>
